@@ -1,0 +1,129 @@
+
+%This is my super simple Real Analysis Homework template
+
+documentclass{article}
+usepackage[utf8]{inputenc}
+usepackage[english]{babel}
+usepackage[]{amsthm} %lets us use begin{proof}
+usepackage[]{amssymb} %gives us the character
+usepackage{glossaries}
+
+datetoday
+%This information doesn't actually show up on your document unless you use the maketitle command below
+makeglossaries
+begin{document}
+newglossaryentry{term}{
+name=Term,
+description={
+A emph{term} is any letters or numbers with no addition or subtraction next to them.
+$2a + b$ Here $2a$ is a term, and $b$ is a seperate term
+}page
+}
+newglossaryentry{diff2sq}
+{name=Difference of two squares,
+description={Any emph{polynomial} that be expressed as the emph{difference of two squares} has a solution in the form  $a^2 - b^2 =(a+b)(a-b)$}page}
+newglossaryentry{binomial}{
+name=Binomial expansion,
+description={The word emph{binomial} can be broken up into two pieces emph{bi} meaning 2   emph{nomial} meaning term or variable.[2mm] So a Binomial expansion is just a fancy word for expanding the brackets with two terms.}page
+}
+%Section and subsection automatically number unless you put the asterisk next to them.
+
+
+section{Difference of two squares}
+When do we use emph{gls{diff2sq}} polynomials[2mm]
+First we look at for a emph{gls{term}} subtracting another emph{Term} like $x - y$.[2mm]
+Then we look to see if $x$ textbf{AND} $y$ are squares. So does $sqrt{x}$ textbf{AND}  $sqrt{y}$ make something neat.[2mm] If if it does work then great. We know the solution is going to be in the form begin{align}
+   (a-b)(a+b)
+end{align}
+where does this come from well it comes from the expanding the brackets.
+begin{align}
+       (a+b)(a-b) = a^2 + ab - ab -b^2 = a^2 -b^2
+end{align}
+so we are really just trying to work backwards  from our difference of two squares, to our factorised form.[2mm]
+Lets look at an example
+
+begin{align}
+    4x^2-9
+end{align}
+Lets start by looking at the term $4x^2$, is this the square of some term
+Yes! it is, its the square of $2x$ which is to say that begin{align}
+    2xtimes2x = (2x)^2 = 4x^2
+end{align}
+ So now that we know that the first term is a square, is the second term a square 
+This one is easier, $9 = 3^2$. Since there is a minus separating them, we know that this is a textbf{difference of two squares}.
+begin{align}
+    4x^2 -9 = 2x^2 - 3^2 = (2x)^2+ 2xtimes3 -2xtimes3 - 3^2 = (2x + 3) (2x-3)
+end{align}
+This is a lot of work to get an answer. Thankfully there is a much easier way of doing it. If we know exactly what the two squares we need to find are, we can just substitute them into what we know the solution is going to be. So for our previous example we have
+begin{align}
+    4x^2 - 9 = (2x + 9)(2x-9) = (a+b)(a-b)
+end{align}
+As long as we know $a$ and $b$ we and we know the problem is a perfect square we don't need anymore information, we can just substitute it into (1)
+So to summarise we can use the difference of two squares textbf{IF}
+begin{center}
+    begin{enumerate}
+    item both terms are squares
+    item they are separated by a minus sign
+end{enumerate}
+end{center}
+
+If it doesn't, we need a different method.
+
+section{Binomial Expansions}
+A gls{binomial} is the process of expanding brackets with two terms in them.[2mm] there are two important expansions for us to learn. begin{align}
+    (a-b)(a-b) textbf{ or } (a-b)^2
+end{align}
+and begin{align}
+    (a+b)(a+b) textbf{ or } (a+b)^2
+end{align}
+[2mm]
+If we take a look at $(a-b)(a-b)$ we can expand it like this
+begin{align}
+    (a-b)(a-b) = a^2 -2ab + b^2 
+end{align}
+[2mm]
+and similarly for $(a+b)(a+b)$ we have 
+begin{align}
+    (a+b)(a+b) = a^2 + 2ab + b^2 
+end{align}
+[2mm]
+This is stuff we know, so why is it important.
+[2mm]
+When we change small things in the terms of $a^2 + 2ab + b^2$ sometimes we can still factorise (or un-expand) it. Let look at an examples
+begin{align}
+    2a^2 + 4ab + 2b^2  = 2times(a^2 + 2ab + b^2) = 2(a+b)(a+b)
+end{align}
+All we did was multiply (3) by $2$. [2mm]
+Next
+begin{align}
+    -3a^2 -6ab -3b^2 =-3times(a^2+2ab+b^2) = -3(a+b)(a+b)
+end{align}
+Similarly we muliplied (3) by $-3$. [2mm]
+These are pretty easy examples so when does it get hard.[2mm]
+textbf{Remember} $a$ and $b$ can be any numbers or variables. So we can have problems like this.
+begin{align}
+    x^2 + 4x + 4
+end{align}
+Here $a$ is going to be $x$
+but what is $b$ 
+linebreak
+Well if this follows our formula from (3) then we know that $4 = b^2$, so it looks like $b = 2$ but does this make sense[2mm]
+well if $b = 2$ then 
+begin{align}
+    x^2 + 4x + 2^2 = a^2 + 2ab+ b^2 = (a+b)(a+b) =(x+2)(x+2) = (x+2)^2
+end{align}
+[4mm]
+
+
+
+
+
+
+    
+%Basically, you type whatever text you want and use the $ sign to enter math mode.
+%For fancy calligraphy letters, use mathcal{}
+%Special characters are their own commands
+
+printglossaries
+
+end{document}

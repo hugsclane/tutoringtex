@@ -1,0 +1,113 @@
+%This is a homework template
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsthm} %lets us use \begin{proof}
+\usepackage[]{amssymb} %gives us the character
+\usepackage{ulem} %lets us use \sout
+\usepackage{glossaries}
+
+\date\today
+%This information doesn't actually show up on your document unless you use the maketitle command below
+\makeglossaries
+\begin{document}
+%Section and subsection automatically number unless you put the asterisk next to them.
+\newglossaryentry{coefficient}{name=coefficient,
+description= {: a coefficient is the smallest part of an equation. It is the singular elements in a term, so if $2x$ is a term then $2$ and $x$ are coefficients. Most of the time if the function is about $x$ such as $x^2 +2x + 1$ we will refer to the coefficients of $x^2$ as 1 and of $x$ as 2\\ page}
+}
+\newglossaryentry{quadratic}{
+name=quadratic,
+description={a quadratic polynomial is a polynomial with a variable that has order 2 e.g. $x^2$.A polynomial that has order 3 e.g. $x^3$ is called a cubic polynomial, quadratic polynomials can and often are terms in cubic polynomials e.g. $x^3 + 2x^2 + x = x(x^2+2x+1) = x(x+1)^2$ \\ page}
+}
+
+\section*{Algebra and substitution}
+For monic and non-monic functions we can sometimes have expressions in the following form
+\begin{align}
+    y^2 + 2(x-1)y + (x-1)^2
+\end{align}
+This looks familer to an equation we have seen before, namely
+\begin{align}
+    y^2 + yx + x^2
+\end{align}
+so can we factorise equation (1) the same way we would factorise equation (2).
+\begin{align*}
+    y^2 + 2(x-1)y + (x-1)^2 = y^2 + y(x-1) + y(x-1) + (x-1)^2  = (y + x - 1)^2
+\end{align*}
+notice that x-1 takes the place of x in our usual representation of this perfect square.
+\\[2mm]
+lets look at a slightly different example, 
+\begin{align}
+    (y-5)7 + x(y-5) 
+\end{align}
+in this case we can see that the $y-5$ \emph{\gls{coefficient}} is in both terms. A way to make this easier to see is to pretend that $y-5$ is some other variable. So we can say that $y-5 = a$. Now our function look like this:
+\begin{align*}
+    a7 + xa = a(7+x)
+\end{align*}
+This is really easy for us to factorise. \emph{BUT} we said that $a = y-5$ so we have to substitute it back in.
+\begin{align*}
+    (y-5)(7+x)
+\end{align*}
+and so this function is fully factorised.\\[2mm]
+So what can we learn from this, well, when we look for like-terms we should treat anything inside brackets as an \emph{coefficient}, and if we find some like terms we should factorise them normally.
+
+\section*{Factorising Trinomial Quotients}
+Sometimes when we have an expression, we can have polynomials dividing each other. These can look very intimidating but they are actually all solvable with methods you should be familiar with. For example:
+\begin{align*}
+    \frac{x^2 + 4x -5}{x^2 + 7x + 10}
+\end{align*}
+
+this might look intimidating but its clearly two quadratics. So our first step is to solve the quadratics separately.
+\begin{align*}
+    x^2+4x - 5  = (x+5)(x-1)
+\end{align*}
+and
+\begin{align*}
+    x^2 +7 + 10 = (x+5)(x+2)
+\end{align*}
+now that we have factorised each \gls{quadratic} we look for like terms in the fraction.
+\begin{align*}
+     \frac{ (x+5)(x-1)}{(x+5)(x+2)} = \frac{ \xout{(x+5)}(x-1)}{\xout{(x+5)}(x+2)}
+\end{align*}
+\section{Non-monic Trinomials}
+Not every trinomial is has a leading coefficient of 1, these are called non-monic trinomials and can be solved in a similar way to monic trinomials. lets look at this example:
+\begin{align*}
+    4x^2 + 11x + 7
+\end{align*}
+Its easy to see that the product of our leading coefficient and our trailing coefficient will be $28$ and the sum of our out factors has to be $4$. So our two factors are going to be $7$ and $4$. So our factors are going to be in form of $4x+4$ and $4x+7$. Lets guess the factors using solution, and to check it lets expand our factors
+\begin{align*}
+    (4x+4)(4x+7) = 16x^2 + 28x+ 16x+ 28 = 4(4x^2 + 11x + 7)
+\end{align*}
+We can see that using these factors we get an answer that is exactly $4$ times bigger than our question.\\
+What does that mean?\\
+Well if $(4x+4)(4x+7)$ is 4 times bigger than our real factors, then our true factors are 
+\begin{align*}
+    \frac{(\xout{4}x+\xout{4}1)(4x+7)}{\xout{4}} = (x+1)(4x+7)
+\end{align*}
+\section{Putting everything together}
+Most factorising problems will be different, but there are some steps you should exaust to make sure you factorise correctly. Lets look at some harder examples:
+\begin{align*}
+    2x^{14}-512x^6
+\end{align*}
+Our first step should always to find \uline{like terms} within expressions. If we look really carefully, there is a like term shared between both terms. Both terms are divisible by the coefficient $2$, and both terms are divisible by the coefficient $x^6$. So the like term is going to be a factor of $2x^6$, or put more simply it will be the product of both $2$ and $x^6$
+\begin{align*}
+    2x^{14}-512x^6 = 2x^6(x^8-256)
+\end{align*}
+
+If there are no like terms for us to use our next step should be to try to identify if the polynomial is monic or non-monic. Then to use the product-sum-factor method appropriately.
+\begin{align*}
+    5x^2 - 12x + 7
+\end{align*}
+$5$,$12$ and $7$ share no common factors so we have to identify that it \emph{is} non-monic. Now we can use the product-sum-factors method to find factors. 
+\begin{itemize}
+    \item P: $ 5\times 7  = 35$
+    \item S: $ 12 = -5-7$
+    \item F: $-5,-7$
+\end{itemize}
+if we assume that the factors are $\uline{(5x-5)}(5x-7)$, then we know from our expansion in non-monic trinomials that it will be $\uline{5}$ times larger than our true factors. So our true factors will be 
+\begin{align*}
+    \frac{(5x-5)(5x-7)}{5} = (x-1)(5x-7)
+\end{align*}
+\printglossaries
+
+\end{document}
